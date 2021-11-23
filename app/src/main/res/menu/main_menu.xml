@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_baseline_notifications_active_24"
+            android:title="Thông Báo" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Cài Đặt Chung" />
+        <item
+            android:id="@+id/nav_suppor"
+            android:icon="@drawable/ic_baseline_support_agent_24"
+            android:title="Hỗ Trợ" />
+
+    </group>
+
+    <item android:title="Hồ Sơ">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_baseline_3p_24"
+                    android:title="Thông Tin" />
+                <item
+                    android:id="@+id/nav_search"
+                    android:icon="@drawable/ic_baseline_search_24"
+                    android:title="Tìm Kiếm" />
+                <item
+                    android:id="@+id/nav_class"
+                    android:icon="@drawable/ic_baseline_class_24"
+                    android:title="Lớp" />
+            </group>
+        </menu>
+
+    </item>
+
+
+    <item android:title="Điều Hướng ">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/outline_logout_black_24"
+                android:title="Đăng Xuất" />
+            </group>
+        </menu>
+
+    </item>
+
+</menu>

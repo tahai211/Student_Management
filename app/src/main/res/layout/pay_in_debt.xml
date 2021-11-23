@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/hvktmm"
+        android:layout_width="190dp"
+        android:layout_height="184dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="110dp"
+        android:src="@drawable/hvktmm" />
+
+    <TextView
+        android:id="@+id/payis"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/hvktmm"
+        android:layout_marginTop="50dp"
+        android:text="Đã Thanh Toán: "
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/debt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/payis"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/checkBox"
+        android:text="Còn Nợ :"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp">
+
+    </TextView>
+
+    <CheckBox
+
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="-3dp" />
+
+    <TextView
+        android:id="@+id/surplus"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_below="@+id/debt"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/checkBox2"
+        android:text="Số dư : "
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="-2dp" />
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/surplus"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Chọn vào ô bạn muốn thanh toán "
+        android:textColor="#ff0000">
+
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:layout_below="@+id/note"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="61dp"
+        android:backgroundTint="#ffa500"
+        android:text="Thanh Toán"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="402dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="-1dp">
+
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="395dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="0dp"
+            android:firstDayOfWeek="2">
+
+        </CalendarView>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="381dp"
+        android:layout_height="290dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_lich">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/adamina"
+            android:gravity="center"
+            android:text="School"
+
+            android:textColor="#ff0000"
+            android:textSize="30dp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="169dp"
+            android:layout_marginTop="50dp" />
+    </FrameLayout>
+
+</RelativeLayout>
