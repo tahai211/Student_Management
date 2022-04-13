@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Chat.MemoryData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +40,7 @@ public class login extends AppCompatActivity {
         final Button btnLogin = findViewById(R.id.btnLogin);
         final TextView textView = findViewById(R.id.RegisterButton);
 
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +61,9 @@ public class login extends AppCompatActivity {
                                     String emailFromDB = snapshot.child(usertxt).child("email").getValue(String.class);
                                     String phoneFromDB = snapshot.child(usertxt).child("phone").getValue(String.class);
                                     String photoFromDB = snapshot.child(usertxt).child("photo").getValue(String.class);
+
+
+
 
                                     Toast.makeText(login.this,"successfully logger in",Toast.LENGTH_SHORT).show();
                                     Intent a = new Intent(getApplicationContext(),homeScreen.class);

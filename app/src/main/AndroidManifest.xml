@@ -13,13 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Chat.Chat"
+            android:exported="true" />
+        <activity
             android:name=".ListAccActivity"
             android:exported="true" />
         <activity android:name=".Signup" />
         <activity android:name=".homeScreen" />
         <activity android:name=".MainActivity" />
-
-
         <activity android:name=".menu" />
         <activity
             android:name=".login"

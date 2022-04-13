@@ -5,15 +5,19 @@ import android.os.Bundle;
 import java.io.Serializable;
 
 public class student implements Serializable {
-   private String user, password, email, name, phone, picture;
+   private String user, password, email, name, phone, picture,lastMessage,chatKey;
+   private int unseenMessages;
 
-   public student(String user, String password, String email, String name, String phone, String picture) {
+   public student(String user, String password, String email, String name, String phone, String picture,String lastMessage, int unseenMessages, String chatKey) {
       this.user = user;
       this.password = password;
       this.email = email;
       this.name = name;
       this.phone = phone;
       this.picture = picture;
+      this.lastMessage = lastMessage;
+      this.unseenMessages = unseenMessages;
+      this.chatKey = chatKey;
    }
 
    public String getUser() {
@@ -64,6 +68,27 @@ public class student implements Serializable {
       this.picture = picture;
    }
 
+   public String getLastMessage() {
+      return lastMessage;
+   }
+
+   public void setLastMessage(String lastMessage) {
+      this.lastMessage = lastMessage;
+   }
+
+   public int getUnseenMessages() {
+      return unseenMessages;
+   }
+
+   public void setUnseenMessages(int unseenMessages) {
+      this.unseenMessages = unseenMessages;
+   }
+
+   public String getChatKey() {
+      return chatKey;
+   }
+
+
    @Override
    public String toString() {
       return "student{" +
@@ -73,6 +98,8 @@ public class student implements Serializable {
               ", name='" + name + '\'' +
               ", phone='" + phone + '\'' +
               ", picture='" + picture + '\'' +
+              ", lastMessage='" + lastMessage + '\'' +
+              ", unseenMessages=" + unseenMessages +
               '}';
    }
 }

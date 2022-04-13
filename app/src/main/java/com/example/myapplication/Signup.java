@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Chat.MemoryData;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -61,6 +62,16 @@ public class Signup extends AppCompatActivity {
         final Button sign_up = findViewById(R.id.SignUpButton);
         final TextView sign_in = findViewById(R.id.signInText);
         photo = findViewById(R.id.imageProfile);
+        if (!MemoryData.getData(this).isEmpty()){
+            Intent a = new Intent(getApplicationContext(), ListAccActivity.class);
+            a.putExtra("name",MemoryData.getName(this));
+            a.putExtra("user",MemoryData.getData(this));
+            a.putExtra("email","");
+            a.putExtra("phone","");
+            a.putExtra("photo","");
+            startActivity(a);
+            finish();
+        }
 
 
         photo.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +95,7 @@ public class Signup extends AppCompatActivity {
                 final String emailtxt = email.getText().toString();
                 final String phonetxt = phone.getText().toString();
                 final String phototxt = photo.toString();
-                student Student = new student(usertxt,passwordtxt,emailtxt,nametxt,phonetxt,phototxt);
+                student Student = new student(usertxt,passwordtxt,emailtxt,nametxt,phonetxt,phototxt,"",0,"");
 
                 if (nametxt.isEmpty() || usertxt.isEmpty() || passwordtxt.isEmpty() || compasswordtxt.isEmpty() || emailtxt.isEmpty() || phonetxt.isEmpty()) {
                     Toast.makeText(Signup.this, "Error", Toast.LENGTH_SHORT).show();
@@ -102,6 +113,9 @@ public class Signup extends AppCompatActivity {
                             } else {
                                 String pathobject =String.valueOf(Student.getUser());
                                 databaseReference.child("Member").child(pathobject).setValue(Student);
+                                MemoryData.saveData(usertxt,Signup.this);
+                                MemoryData.saveName(nametxt,Signup.this);
+
 
 
                                 Toast.makeText(Signup.this, "Win", Toast.LENGTH_SHORT).show();

@@ -23,6 +23,9 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class homeScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     NavigationView navigationView;
@@ -30,6 +33,7 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
     Toolbar toolbar;
 
     TextView tenT,masvT,nganhfT;
+    CircleImageView imageprf;
     ImageView chat;
 
 
@@ -46,18 +50,31 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
         masvT = findViewById(R.id.maSV);
         nganhfT = findViewById(R.id.nganh);
         chat = findViewById(R.id.imageView2);
+        imageprf = findViewById(R.id.imageProfile);
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         hideStatusBar();
-        showProfile();
+
+        Intent intent = getIntent();
+        String user_user = intent.getStringExtra("user");
+        String user_email = intent.getStringExtra("email");
+        String user_name = intent.getStringExtra("name");
+        String user_photo = intent.getStringExtra("photo");
+        tenT.setText(user_name);
+        masvT.setText(user_user);
+        nganhfT.setText(user_email);
+        Picasso.get().load(user_photo).into(imageprf);
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ListAccActivity.class);
-                startActivity(intent);
+                Intent a = new Intent(getApplicationContext(), ListAccActivity.class);
+                a.putExtra("name",user_name);
+                a.putExtra("user",user_user);
+                a.putExtra("email",user_email);
+                startActivity(a);
                 finish();
             }
         });
@@ -66,16 +83,6 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
 
 
         
-    }
-
-    private void showProfile() {
-        Intent intent = getIntent();
-        String user_user = intent.getStringExtra("user");
-        String user_email = intent.getStringExtra("email");
-        String user_name = intent.getStringExtra("name");
-        tenT.setText(user_name);
-        masvT.setText(user_user);
-        nganhfT.setText(user_email);
     }
 
 
